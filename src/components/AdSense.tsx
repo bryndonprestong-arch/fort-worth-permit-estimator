@@ -22,7 +22,7 @@ export const AdSense: React.FC<AdSenseProps> = ({ slot, format = 'auto', respons
           display: 'block',
           minHeight: format === 'vertical' ? '600px' : '250px',
         }}
-        data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" // Replace with your Publisher ID
+        data-ad-client="ca-pub-3007484055680406"
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive={responsive}
