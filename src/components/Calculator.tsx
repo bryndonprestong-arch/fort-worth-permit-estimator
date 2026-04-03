@@ -26,10 +26,10 @@ export const Calculator: React.FC = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#f0f4f8', padding: '40px 20px', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#f0f4f8', padding: '60px 20px', minHeight: '100vh' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
-        <div style={{ marginBottom: '40px' }}>
+        <div style={{ marginBottom: '60px' }}>
           <h1 style={{
             fontSize: '36px',
             fontWeight: 'bold',
@@ -51,14 +51,14 @@ export const Calculator: React.FC = () => {
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gap: '40px',
+          gap: '60px',
           alignItems: 'start',
         }}>
           {/* LEFT COLUMN - INPUT FORM */}
           <div style={{
             backgroundColor: '#ffffff',
             borderRadius: '8px',
-            padding: '32px',
+            padding: '48px',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
             border: '1px solid #e2e8f0',
           }}>
@@ -66,15 +66,15 @@ export const Calculator: React.FC = () => {
               fontSize: '24px',
               fontWeight: 'bold',
               color: '#1a202c',
-              marginBottom: '28px',
-              paddingBottom: '16px',
+              marginBottom: '40px',
+              paddingBottom: '24px',
               borderBottom: '2px solid #e2e8f0',
             }}>
               Project Information
             </h2>
 
             {/* Project Type Field */}
-            <div style={{ marginBottom: '28px' }}>
+            <div style={{ marginBottom: '40px' }}>
               <label style={{
                 display: 'block',
                 fontSize: '14px',
@@ -122,7 +122,7 @@ export const Calculator: React.FC = () => {
 
             {/* Square Footage Field - Only show for non-remodel */}
             {projectType !== 'remodel' && (
-              <div style={{ marginBottom: '28px' }}>
+              <div style={{ marginBottom: '40px' }}>
                 <label style={{
                   display: 'block',
                   fontSize: '14px',
@@ -172,7 +172,7 @@ export const Calculator: React.FC = () => {
               onClick={handleCalculate}
               style={{
                 width: '100%',
-                padding: '14px 20px',
+                padding: '18px 24px',
                 fontSize: '16px',
                 fontWeight: '600',
                 color: '#ffffff',
@@ -180,7 +180,7 @@ export const Calculator: React.FC = () => {
                 border: 'none',
                 borderRadius: '6px',
                 cursor: 'pointer',
-                marginTop: '12px',
+                marginTop: '32px',
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
@@ -199,8 +199,8 @@ export const Calculator: React.FC = () => {
 
             {/* Info Box */}
             <div style={{
-              marginTop: '28px',
-              padding: '16px',
+              marginTop: '40px',
+              padding: '24px',
               backgroundColor: '#f0fdfa',
               borderLeft: '4px solid #14b8a6',
               borderRadius: '4px',
@@ -219,7 +219,7 @@ export const Calculator: React.FC = () => {
           <div style={{
             backgroundColor: '#ffffff',
             borderRadius: '8px',
-            padding: '32px',
+            padding: '48px',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
             border: '1px solid #e2e8f0',
           }}>
@@ -227,8 +227,8 @@ export const Calculator: React.FC = () => {
               fontSize: '24px',
               fontWeight: 'bold',
               color: '#1a202c',
-              marginBottom: '28px',
-              paddingBottom: '16px',
+              marginBottom: '40px',
+              paddingBottom: '24px',
               borderBottom: '2px solid #e2e8f0',
             }}>
               Estimated Fee
@@ -241,9 +241,9 @@ export const Calculator: React.FC = () => {
                   backgroundColor: '#f0fdfa',
                   border: '2px solid #14b8a6',
                   borderRadius: '8px',
-                  padding: '28px',
+                  padding: '40px',
                   textAlign: 'center',
-                  marginBottom: '28px',
+                  marginBottom: '40px',
                 }}>
                   <p style={{
                     fontSize: '12px',
@@ -266,12 +266,12 @@ export const Calculator: React.FC = () => {
                 </div>
 
                 {/* Result Details */}
-                <div style={{ marginBottom: '24px' }}>
+                <div style={{ marginBottom: '32px' }}>
                   <div style={{
                     backgroundColor: '#f9fafb',
-                    padding: '16px',
+                    padding: '24px',
                     borderRadius: '6px',
-                    marginBottom: '12px',
+                    marginBottom: '20px',
                     borderLeft: '3px solid #14b8a6',
                   }}>
                     <p style={{
@@ -296,9 +296,9 @@ export const Calculator: React.FC = () => {
                   {projectType !== 'remodel' && (
                     <div style={{
                       backgroundColor: '#f9fafb',
-                      padding: '16px',
+                      padding: '24px',
                       borderRadius: '6px',
-                      marginBottom: '12px',
+                      marginBottom: '20px',
                       borderLeft: '3px solid #14b8a6',
                     }}>
                       <p style={{
@@ -321,7 +321,7 @@ export const Calculator: React.FC = () => {
 
                   <div style={{
                     backgroundColor: '#f9fafb',
-                    padding: '16px',
+                    padding: '24px',
                     borderRadius: '6px',
                     borderLeft: '3px solid #14b8a6',
                   }}>
@@ -329,7 +329,7 @@ export const Calculator: React.FC = () => {
                       fontSize: '12px',
                       fontWeight: '600',
                       color: '#4a5568',
-                      marginBottom: '6px',
+                      marginBottom: '8px',
                     }}>
                       RATE
                     </p>
@@ -348,10 +348,10 @@ export const Calculator: React.FC = () => {
                   backgroundColor: '#fef3c7',
                   border: '1px solid #fcd34d',
                   borderRadius: '6px',
-                  padding: '14px',
-                  fontSize: '12px',
+                  padding: '24px',
+                  fontSize: '13px',
                   color: '#92400e',
-                  lineHeight: '1.5',
+                  lineHeight: '1.6',
                 }}>
                   <strong>⚠️ Disclaimer:</strong> This estimate is based on 2026 Fort Worth residential permit fee structure. Estimates exclude impact fees and trade permits. Always verify with the Fort Worth Building Department for current rates.
                 </div>
@@ -359,7 +359,7 @@ export const Calculator: React.FC = () => {
             ) : (
               <div style={{
                 textAlign: 'center',
-                padding: '60px 20px',
+                padding: '80px 20px',
                 color: '#a0aec0',
               }}>
                 <p style={{
