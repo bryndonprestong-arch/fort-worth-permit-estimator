@@ -29,7 +29,7 @@ export const Calculator: React.FC = () => {
     <div className="max-w-2xl mx-auto p-12 border border-gray-200 rounded-3xl bg-white shadow-2xl">
       <div className="flex items-center gap-3 mb-8">
         <div className="text-3xl">🏗️</div>
-        <h2 className="text-4xl font-bold text-gray-800 border-b-4 border-teal-600 pb-4">
+        <h2 className="text-4xl font-bold text-gray-800 pb-4" style={{ borderBottom: '4px solid #14b8a6' }}>
           Calculate Your Permit Fee
         </h2>
       </div>
@@ -45,7 +45,15 @@ export const Calculator: React.FC = () => {
         <select
           value={projectType}
           onChange={handleProjectTypeChange}
-          className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent text-lg font-semibold hover:border-teal-300 transition-colors"
+          className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl bg-gray-50 focus:outline-none text-lg font-semibold"
+          onFocus={(e) => {
+            e.currentTarget.style.borderColor = '#14b8a6';
+            e.currentTarget.style.boxShadow = '0 0 0 3px rgba(20, 184, 166, 0.1)';
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.borderColor = '#d1d5db';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
         >
           <option value="new">New Single-Family / Addition</option>
           <option value="remodel">Interior Remodel / Repair</option>
@@ -64,7 +72,18 @@ export const Calculator: React.FC = () => {
             placeholder="e.g. 2400"
             value={sqft}
             onChange={(e) => setSqft(e.target.value)}
-            className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent text-lg font-semibold hover:border-teal-300 transition-colors"
+            className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl text-lg font-semibold"
+            style={{
+              backgroundColor: '#f9fafb',
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.borderColor = '#14b8a6';
+              e.currentTarget.style.boxShadow = '0 0 0 3px rgba(20, 184, 166, 0.1)';
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.borderColor = '#d1d5db';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
           />
           <p className="text-sm text-gray-500 mt-3">Enter the total square footage of your project</p>
         </div>
@@ -73,18 +92,33 @@ export const Calculator: React.FC = () => {
       {/* Calculate Button */}
       <button
         onClick={handleCalculate}
-        className="w-full bg-gradient-to-r from-teal-600 to-teal-700 text-white py-5 rounded-xl text-xl font-bold hover:from-teal-700 hover:to-teal-800 transition-all shadow-lg hover:shadow-xl mb-12"
+        className="w-full text-white py-5 rounded-xl text-xl font-bold transition-all shadow-lg hover:shadow-xl mb-12"
+        style={{
+          background: 'linear-gradient(to right, #14b8a6, #0d9488)',
+          cursor: 'pointer',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = 'linear-gradient(to right, #0d9488, #0f766e)';
+          e.currentTarget.style.transform = 'translateY(-2px)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = 'linear-gradient(to right, #14b8a6, #0d9488)';
+          e.currentTarget.style.transform = 'translateY(0)';
+        }}
       >
         Calculate Estimated Fee
       </button>
 
       {/* Result Display */}
       {showResult && (
-        <div className="p-10 bg-gradient-to-br from-teal-50 to-teal-100 border-l-8 border-teal-600 rounded-2xl animate-fadeIn mb-12">
-          <p className="text-teal-900 font-bold text-lg mb-4">
+        <div className="p-10 rounded-2xl mb-12 animate-fadeIn" style={{
+          background: 'linear-gradient(to bottom right, #f0fdfa, #e0faf7)',
+          borderLeft: '8px solid #14b8a6',
+        }}>
+          <p className="font-bold text-lg mb-4" style={{ color: '#134e4a' }}>
             ✓ Estimated Building Fee:
           </p>
-          <div className="text-6xl font-black text-teal-700 mb-8">
+          <div className="text-6xl font-black mb-8" style={{ color: '#0d9488' }}>
             ${estimatedFee?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </div>
           <div className="space-y-4">
@@ -99,9 +133,12 @@ export const Calculator: React.FC = () => {
       )}
 
       {/* Info Box */}
-      <div className="p-8 bg-teal-50 border-l-4 border-teal-600 rounded-lg">
+      <div className="p-8 rounded-lg" style={{
+        backgroundColor: '#f0fdfa',
+        borderLeft: '4px solid #14b8a6',
+      }}>
         <p className="text-sm text-gray-700 leading-relaxed">
-          <strong className="text-teal-900">How it works:</strong> Fort Worth calculates residential permit fees based on square footage at $1.20 per square foot for new builds and sheds. Interior remodels have a flat rate of $120.00.
+          <strong style={{ color: '#134e4a' }}>How it works:</strong> Fort Worth calculates residential permit fees based on square footage at $1.20 per square foot for new builds and sheds. Interior remodels have a flat rate of $120.00.
         </p>
       </div>
     </div>
