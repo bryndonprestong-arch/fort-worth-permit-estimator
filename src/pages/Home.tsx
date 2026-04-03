@@ -13,29 +13,29 @@ export const Home: React.FC = () => {
       <Calculator />
 
       {/* Ad Space 1 */}
-      <div className="py-8" style={{ backgroundColor: '#f9fafb' }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <div style={{ backgroundColor: '#f9fafb', paddingTop: '80px', paddingBottom: '80px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <AdSense slot="1234567890" format="horizontal" />
         </div>
       </div>
 
       {/* Article Section */}
-      <div style={{ backgroundColor: '#f9fafb' }}>
-        <div className="max-w-6xl mx-auto px-6 py-12">
+      <div style={{ backgroundColor: '#f9fafb', paddingTop: '80px', paddingBottom: '80px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <Article />
         </div>
       </div>
 
       {/* Ad Space 2 */}
-      <div className="py-8" style={{ backgroundColor: '#ffffff' }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <div style={{ backgroundColor: '#ffffff', paddingTop: '80px', paddingBottom: '80px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <AdSense slot="0987654321" format="vertical" />
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="text-white py-16 mt-12" style={{ backgroundColor: '#134e4a' }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <footer className="text-white" style={{ backgroundColor: '#134e4a', paddingTop: '80px', paddingBottom: '80px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
               <h3 className="text-lg font-bold mb-4">About</h3>
