@@ -209,8 +209,22 @@ export const Calculator: React.FC = () => {
                 fontSize: '13px',
                 color: '#0f766e',
                 lineHeight: '1.6',
+                marginBottom: '12px',
               }}>
                 <strong>How it works:</strong> Fort Worth charges $1.20 per square foot for new builds and sheds. Interior remodels have a flat rate of $120.00.
+              </p>
+              <p style={{
+                fontSize: '12px',
+                color: '#0f766e',
+              }}>
+                <a href="https://www.permitflow.com/blog/fort-worth-building-permit" target="_blank" rel="noopener noreferrer" style={{
+                  color: '#14b8a6',
+                  textDecoration: 'none',
+                  fontWeight: '600',
+                  borderBottom: '1px solid #14b8a6',
+                }}>
+                  Learn more about Fort Worth building permits →
+                </a>
               </p>
             </div>
           </div>

@@ -10,16 +10,18 @@ export const Article: React.FC = () => {
         As Fort Worth experiences record-breaking growth in 2026, the building department has streamlined the permitting process. Whether you are building a new home in North Fort Worth or remodeling a historic bungalow in Fairmount, understanding the fees is the first step to a successful project.
       </p>
 
-      <h2 className="text-3xl font-bold text-gray-800 mt-16 mb-8 pb-4" style={{ borderBottom: '4px solid #14b8a6' }}>
+      <h2 className="text-3xl font-bold text-gray-800 pb-4" style={{ borderBottom: '4px solid #14b8a6', marginTop: '120px', marginBottom: '60px' }}>
         How Fees are Calculated
       </h2>
-      <p className="text-lg text-gray-700 mb-10 leading-relaxed">
+      <p className="text-lg text-gray-700 leading-relaxed" style={{ marginBottom: '80px' }}>
         Under Texas State Law (HB 852), cities cannot charge residential permit fees based on the dollar value of your project. Instead, Fort Worth utilizes a Square Footage model.
       </p>
 
-      <div className="p-10 my-12 rounded-lg" style={{
+      <div className="p-10 rounded-lg" style={{
         backgroundColor: '#f0fdfa',
         borderLeft: '6px solid #14b8a6',
+        marginTop: '60px',
+        marginBottom: '80px',
       }}>
         <h3 className="font-bold text-gray-900 mb-8 text-lg">Fee Structure:</h3>
         <ul className="space-y-6 text-gray-700">
@@ -34,28 +36,32 @@ export const Article: React.FC = () => {
         </ul>
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-800 mt-16 mb-8 pb-4" style={{ borderBottom: '4px solid #14b8a6' }}>
+      <h2 className="text-3xl font-bold text-gray-800 pb-4" style={{ borderBottom: '4px solid #14b8a6', marginTop: '120px', marginBottom: '60px' }}>
         The "200 Square Foot" Rule for Sheds
       </h2>
-      <p className="text-lg text-gray-700 mb-10 leading-relaxed">
+      <p className="text-lg text-gray-700 leading-relaxed" style={{ marginBottom: '80px' }}>
         Many homeowners ask if they need a permit for a backyard shed. In Fort Worth, detached accessory structures under 200 square feet are generally exempt from building permits, provided they do not have running water or electricity. However, you must still adhere to "setback" requirements—usually 5 feet from side and rear property lines.
       </p>
 
-      <div className="p-10 my-12 rounded-lg" style={{
+      <div className="p-10 rounded-lg" style={{
         backgroundColor: '#fffbeb',
         borderLeft: '6px solid #d97706',
+        marginTop: '60px',
+        marginBottom: '80px',
       }}>
         <p className="text-lg text-gray-800 leading-relaxed">
           <strong style={{ color: '#92400e' }}>⚠️ Important:</strong> Municipal fees change frequently. Always verify current rates with the Fort Worth Building Department before submitting your project budget.
         </p>
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-800 mt-16 mb-8 pb-4" style={{ borderBottom: '4px solid #14b8a6' }}>
+      <h2 className="text-3xl font-bold text-gray-800 pb-4" style={{ borderBottom: '4px solid #14b8a6', marginTop: '120px', marginBottom: '60px' }}>
         Official Fort Worth Resources
       </h2>
       <div className="p-10 rounded-lg" style={{
         backgroundColor: '#f0fdfa',
         border: '2px solid #d1fae5',
+        marginTop: '60px',
+        marginBottom: '80px',
       }}>
         <ul className="space-y-6 text-gray-700">
           <li className="text-lg">
@@ -70,7 +76,7 @@ export const Article: React.FC = () => {
         </ul>
       </div>
 
-      <p className="text-base text-gray-600 mt-14 pt-10 leading-relaxed" style={{ borderTop: '2px solid #e5e7eb' }}>
+      <p className="text-base text-gray-600 leading-relaxed" style={{ borderTop: '2px solid #e5e7eb', marginTop: '120px', paddingTop: '60px' }}>
         <em>Last updated: February 2026. This article is for informational purposes only and does not constitute professional advice. Always verify information with official Fort Worth city sources.</em>
       </p>
     </article>
