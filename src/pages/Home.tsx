@@ -101,7 +101,7 @@ export const Home: React.FC = () => {
       <Calculator />
 
       {/* Ad Space 1 */}
-      <div style={{ backgroundColor: '#f9fafb', paddingTop: '20px', paddingBottom: '80px' }}>
+      <div style={{ backgroundColor: '#f9fafb', paddingTop: '20px', paddingBottom: '20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <AdSense slot="1234567890" format="horizontal" />
         </div>
