@@ -1,7 +1,7 @@
 
 export const Article: React.FC = () => {
   return (
-    <article className="max-w-3xl mx-auto px-6 py-20 bg-white rounded-2xl shadow-lg my-12">
+    <article className="max-w-3xl mx-auto px-6 py-20 bg-white rounded-2xl shadow-lg" style={{ margin: '0 auto' }}>
       <h1 className="text-5xl font-bold text-gray-900 mb-12 leading-tight">
         Residential Building Permits in Fort Worth: 2026 Guide
       </h1>
