@@ -108,7 +108,7 @@ export const Home: React.FC = () => {
       </div>
 
       {/* Article Section */}
-      <div style={{ backgroundColor: '#f9fafb', paddingTop: '20px', paddingBottom: '80px' }}>
+      <div style={{ backgroundColor: '#f9fafb', paddingTop: '0px', paddingBottom: '80px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <Article />
         </div>
