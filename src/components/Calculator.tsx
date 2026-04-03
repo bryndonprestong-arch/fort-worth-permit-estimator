@@ -39,9 +39,18 @@ export const Calculator: React.FC = () => {
         </div>
 
         {/* Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+          gap: '32px',
+        }}>
           {/* LEFT COLUMN - INPUT FORM */}
-          <div className="bg-white rounded-lg shadow-md p-8">
+          <div style={{
+            backgroundColor: '#ffffff',
+            borderRadius: '8px',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+            padding: '32px',
+          }}>
             <h2 className="text-2xl font-bold mb-8" style={{ color: '#1f2937' }}>
               Project Information
             </h2>
@@ -142,7 +151,12 @@ export const Calculator: React.FC = () => {
           </div>
 
           {/* RIGHT COLUMN - RESULTS */}
-          <div className="bg-white rounded-lg shadow-md p-8">
+          <div style={{
+            backgroundColor: '#ffffff',
+            borderRadius: '8px',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+            padding: '32px',
+          }}>
             <h2 className="text-2xl font-bold mb-8" style={{ color: '#1f2937' }}>
               Estimated Fee
             </h2>
