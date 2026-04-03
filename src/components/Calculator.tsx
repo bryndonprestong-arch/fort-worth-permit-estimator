@@ -11,9 +11,9 @@ export const Calculator: React.FC = () => {
     let fee = 0;
 
     if (projectType === 'new' || projectType === 'shed') {
-      fee = sqftValue * 1.2; // 2026 Estimated Rate
+      fee = sqftValue * 1.2;
     } else {
-      fee = 120.0; // 2026 Base Remodel Rate
+      fee = 120.0;
     }
 
     setEstimatedFee(fee);
@@ -26,120 +26,195 @@ export const Calculator: React.FC = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-12 border border-gray-200 rounded-3xl bg-white shadow-2xl">
-      <div className="flex items-center gap-3 mb-8">
-        <div className="text-3xl">🏗️</div>
-        <h2 className="text-4xl font-bold text-gray-800 pb-4" style={{ borderBottom: '4px solid #14b8a6' }}>
-          Calculate Your Permit Fee
-        </h2>
-      </div>
-      <p className="text-base text-gray-600 mb-12 leading-relaxed">
-        Estimated Residential Fees (Updated February 2026)
-      </p>
-
-      {/* Project Type Selection */}
-      <div className="mb-12">
-        <label className="block font-bold text-gray-800 mb-4 text-lg">
-          Project Type:
-        </label>
-        <select
-          value={projectType}
-          onChange={handleProjectTypeChange}
-          className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl bg-gray-50 focus:outline-none text-lg font-semibold"
-          onFocus={(e) => {
-            e.currentTarget.style.borderColor = '#14b8a6';
-            e.currentTarget.style.boxShadow = '0 0 0 3px rgba(20, 184, 166, 0.1)';
-          }}
-          onBlur={(e) => {
-            e.currentTarget.style.borderColor = '#d1d5db';
-            e.currentTarget.style.boxShadow = 'none';
-          }}
-        >
-          <option value="new">New Single-Family / Addition</option>
-          <option value="remodel">Interior Remodel / Repair</option>
-          <option value="shed">Shed or Detached Structure</option>
-        </select>
-      </div>
-
-      {/* Square Footage Input */}
-      {projectType !== 'remodel' && (
+    <div className="w-full py-12" style={{ backgroundColor: '#f3f4f6' }}>
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Title Section */}
         <div className="mb-12">
-          <label className="block font-bold text-gray-800 mb-4 text-lg">
-            Living Area (Square Footage):
-          </label>
-          <input
-            type="number"
-            placeholder="e.g. 2400"
-            value={sqft}
-            onChange={(e) => setSqft(e.target.value)}
-            className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl text-lg font-semibold"
-            style={{
-              backgroundColor: '#f9fafb',
-            }}
-            onFocus={(e) => {
-              e.currentTarget.style.borderColor = '#14b8a6';
-              e.currentTarget.style.boxShadow = '0 0 0 3px rgba(20, 184, 166, 0.1)';
-            }}
-            onBlur={(e) => {
-              e.currentTarget.style.borderColor = '#d1d5db';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          />
-          <p className="text-sm text-gray-500 mt-3">Enter the total square footage of your project</p>
-        </div>
-      )}
-
-      {/* Calculate Button */}
-      <button
-        onClick={handleCalculate}
-        className="w-full text-white py-5 rounded-xl text-xl font-bold transition-all shadow-lg hover:shadow-xl mb-12"
-        style={{
-          background: 'linear-gradient(to right, #14b8a6, #0d9488)',
-          cursor: 'pointer',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.background = 'linear-gradient(to right, #0d9488, #0f766e)';
-          e.currentTarget.style.transform = 'translateY(-2px)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'linear-gradient(to right, #14b8a6, #0d9488)';
-          e.currentTarget.style.transform = 'translateY(0)';
-        }}
-      >
-        Calculate Estimated Fee
-      </button>
-
-      {/* Result Display */}
-      {showResult && (
-        <div className="p-10 rounded-2xl mb-12 animate-fadeIn" style={{
-          background: 'linear-gradient(to bottom right, #f0fdfa, #e0faf7)',
-          borderLeft: '8px solid #14b8a6',
-        }}>
-          <p className="font-bold text-lg mb-4" style={{ color: '#134e4a' }}>
-            ✓ Estimated Building Fee:
+          <h1 className="text-5xl font-bold mb-4" style={{ color: '#1f2937' }}>
+            Fort Worth Permit Fee Estimator
+          </h1>
+          <p className="text-xl" style={{ color: '#6b7280' }}>
+            Enter your project details to calculate your estimated building permit fee
           </p>
-          <div className="text-6xl font-black mb-8" style={{ color: '#0d9488' }}>
-            ${estimatedFee?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+        </div>
+
+        {/* Two-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* LEFT COLUMN - INPUT FORM */}
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-2xl font-bold mb-8" style={{ color: '#1f2937' }}>
+              Project Information
+            </h2>
+
+            {/* Project Type */}
+            <div className="mb-8">
+              <label className="block text-sm font-semibold mb-3" style={{ color: '#374151' }}>
+                Project Type
+              </label>
+              <select
+                value={projectType}
+                onChange={handleProjectTypeChange}
+                className="w-full px-4 py-3 border rounded-lg text-base"
+                style={{
+                  borderColor: '#d1d5db',
+                  backgroundColor: '#ffffff',
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = '#14b8a6';
+                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(20, 184, 166, 0.1)';
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = '#d1d5db';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <option value="new">New Single-Family / Addition</option>
+                <option value="remodel">Interior Remodel / Repair</option>
+                <option value="shed">Shed or Detached Structure</option>
+              </select>
+              <p className="text-xs mt-2" style={{ color: '#9ca3af' }}>
+                Select the type of project you're planning
+              </p>
+            </div>
+
+            {/* Square Footage Input */}
+            {projectType !== 'remodel' && (
+              <div className="mb-8">
+                <label className="block text-sm font-semibold mb-3" style={{ color: '#374151' }}>
+                  Living Area (Square Footage)
+                </label>
+                <input
+                  type="number"
+                  placeholder="e.g. 2400"
+                  value={sqft}
+                  onChange={(e) => setSqft(e.target.value)}
+                  className="w-full px-4 py-3 border rounded-lg text-base"
+                  style={{
+                    borderColor: '#d1d5db',
+                    backgroundColor: '#ffffff',
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = '#14b8a6';
+                    e.currentTarget.style.boxShadow = '0 0 0 3px rgba(20, 184, 166, 0.1)';
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = '#d1d5db';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                />
+                <p className="text-xs mt-2" style={{ color: '#9ca3af' }}>
+                  Total square footage of your project
+                </p>
+              </div>
+            )}
+
+            {/* Calculate Button */}
+            <button
+              onClick={handleCalculate}
+              className="w-full py-4 rounded-lg text-lg font-bold text-white transition-all mt-4"
+              style={{
+                background: 'linear-gradient(to right, #14b8a6, #0d9488)',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(to right, #0d9488, #0f766e)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 10px 15px rgba(20, 184, 166, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(to right, #14b8a6, #0d9488)';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              Calculate Estimated Fee
+            </button>
+
+            {/* Info Box */}
+            <div className="mt-8 p-6 rounded-lg" style={{
+              backgroundColor: '#f0fdfa',
+              borderLeft: '4px solid #14b8a6',
+            }}>
+              <p className="text-sm" style={{ color: '#0f766e' }}>
+                <strong>How it works:</strong> Fort Worth charges $1.20 per square foot for new builds and sheds. Interior remodels have a flat rate of $120.00.
+              </p>
+            </div>
           </div>
-          <div className="space-y-4">
-            <p className="text-sm text-gray-700 leading-relaxed">
-              <strong>Note:</strong> This estimate is based on the 2026 Fort Worth residential permit fee structure.
-            </p>
-            <p className="text-xs text-gray-600 leading-relaxed">
-              *Estimates exclude impact fees and trade permits (Plumbing/Electric). Always verify with the Fort Worth Building Department for the most current rates.
-            </p>
+
+          {/* RIGHT COLUMN - RESULTS */}
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-2xl font-bold mb-8" style={{ color: '#1f2937' }}>
+              Estimated Fee
+            </h2>
+
+            {showResult ? (
+              <div className="space-y-8">
+                {/* Main Result */}
+                <div className="text-center py-8" style={{
+                  backgroundColor: '#f0fdfa',
+                  borderRadius: '8px',
+                  border: '2px solid #14b8a6',
+                }}>
+                  <p className="text-sm font-semibold mb-3" style={{ color: '#0f766e' }}>
+                    ESTIMATED BUILDING FEE
+                  </p>
+                  <div className="text-6xl font-black" style={{ color: '#14b8a6' }}>
+                    ${estimatedFee?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </div>
+                </div>
+
+                {/* Details */}
+                <div className="space-y-4 text-sm" style={{ color: '#6b7280' }}>
+                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#f9fafb' }}>
+                    <p className="font-semibold mb-2" style={{ color: '#374151' }}>
+                      📋 Project Type
+                    </p>
+                    <p>
+                      {projectType === 'new' && 'New Single-Family / Addition'}
+                      {projectType === 'remodel' && 'Interior Remodel / Repair'}
+                      {projectType === 'shed' && 'Shed or Detached Structure'}
+                    </p>
+                  </div>
+
+                  {projectType !== 'remodel' && (
+                    <div className="p-4 rounded-lg" style={{ backgroundColor: '#f9fafb' }}>
+                      <p className="font-semibold mb-2" style={{ color: '#374151' }}>
+                        📐 Square Footage
+                      </p>
+                      <p>{parseFloat(sqft).toLocaleString()} sqft</p>
+                    </div>
+                  )}
+
+                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#f9fafb' }}>
+                    <p className="font-semibold mb-2" style={{ color: '#374151' }}>
+                      💰 Rate
+                    </p>
+                    <p>
+                      {projectType === 'remodel' ? '$120.00 flat rate' : '$1.20 per square foot'}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Disclaimer */}
+                <div className="text-xs p-4 rounded-lg" style={{
+                  backgroundColor: '#fef3c7',
+                  borderLeft: '4px solid #f59e0b',
+                  color: '#92400e',
+                }}>
+                  <p>
+                    <strong>⚠️ Disclaimer:</strong> This estimate is based on 2026 Fort Worth residential permit fee structure. Estimates exclude impact fees and trade permits. Always verify with the Fort Worth Building Department for current rates.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div className="text-center py-12" style={{ color: '#9ca3af' }}>
+                <p className="text-lg">
+                  👆 Enter your project details and click "Calculate Estimated Fee" to see your results
+                </p>
+              </div>
+            )}
           </div>
         </div>
-      )}
-
-      {/* Info Box */}
-      <div className="p-8 rounded-lg" style={{
-        backgroundColor: '#f0fdfa',
-        borderLeft: '4px solid #14b8a6',
-      }}>
-        <p className="text-sm text-gray-700 leading-relaxed">
-          <strong style={{ color: '#134e4a' }}>How it works:</strong> Fort Worth calculates residential permit fees based on square footage at $1.20 per square foot for new builds and sheds. Interior remodels have a flat rate of $120.00.
-        </p>
       </div>
     </div>
   );

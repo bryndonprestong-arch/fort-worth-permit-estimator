@@ -5,85 +5,63 @@ import { AdSense } from '../components/AdSense';
 
 export const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section with Background Image */}
-      <section 
-        className="relative py-32 px-6 text-white overflow-hidden"
-        style={{
-          backgroundImage: 'url(/fort-worth-bg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: '#0d9488',
-        }}
-      >
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}></div>
-        
-        <div className="relative max-w-4xl mx-auto text-center z-10">
-          <h1 className="text-7xl font-bold mb-8 leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
-            Fort Worth Permit Fee Estimator
-          </h1>
-          <p className="text-2xl opacity-95 mb-6 font-semibold" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
-            Get Instant Estimates for Residential Building Permits
-          </p>
-          <p className="text-lg opacity-90" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
-            Enter your project details below and get an accurate fee estimate in seconds
-          </p>
-        </div>
-      </section>
+    <div className="min-h-screen" style={{ backgroundColor: '#ffffff' }}>
+      {/* Navigation Spacer */}
+      <div style={{ height: '20px' }}></div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Calculator Section - Prominent */}
-        <div className="py-16">
-          <Calculator />
-        </div>
+      {/* Calculator - Main Content */}
+      <Calculator />
 
-        {/* Ad Space 1 - After Calculator */}
-        <div className="my-12">
+      {/* Ad Space 1 */}
+      <div className="py-8" style={{ backgroundColor: '#f9fafb' }}>
+        <div className="max-w-6xl mx-auto px-6">
           <AdSense slot="1234567890" format="horizontal" />
         </div>
+      </div>
 
-        {/* Article Section */}
-        <div className="py-16">
+      {/* Article Section */}
+      <div style={{ backgroundColor: '#f9fafb' }}>
+        <div className="max-w-6xl mx-auto px-6 py-12">
           <Article />
         </div>
+      </div>
 
-        {/* Ad Space 2 - After Article */}
-        <div className="my-12">
+      {/* Ad Space 2 */}
+      <div className="py-8" style={{ backgroundColor: '#ffffff' }}>
+        <div className="max-w-6xl mx-auto px-6">
           <AdSense slot="0987654321" format="vertical" />
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="text-white py-20 mt-24" style={{ backgroundColor: '#134e4a' }}>
+      <footer className="text-white py-16 mt-12" style={{ backgroundColor: '#134e4a' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
-              <h3 className="text-white font-bold text-lg mb-6">About</h3>
+              <h3 className="text-lg font-bold mb-4">About</h3>
               <p className="text-sm leading-relaxed" style={{ color: '#d1fae5' }}>
                 Independent permit fee estimation tool for North Texas homeowners. Providing accurate, up-to-date information for Fort Worth residential building permits.
               </p>
             </div>
             <div>
-              <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
-              <ul className="text-sm space-y-4">
-                <li><a href="#about" className="transition-colors" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>About & Contact</a></li>
-                <li><a href="#privacy" className="transition-colors" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>Privacy Policy</a></li>
-                <li><a href="#terms" className="transition-colors" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>Terms of Service</a></li>
+              <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+              <ul className="text-sm space-y-3">
+                <li><a href="#about" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>About & Contact</a></li>
+                <li><a href="#privacy" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>Privacy Policy</a></li>
+                <li><a href="#terms" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>Terms of Service</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-white font-bold text-lg mb-6">Official Resources</h3>
-              <ul className="text-sm space-y-4">
-                <li><a href="tel:817-392-2222" className="transition-colors" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>📞 817-392-2222</a></li>
-                <li><a href="https://fortworthtexas.gov" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>Fort Worth Official Site</a></li>
+              <h3 className="text-lg font-bold mb-4">Official Resources</h3>
+              <ul className="text-sm space-y-3">
+                <li><a href="tel:817-392-2222" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>📞 817-392-2222</a></li>
+                <li><a href="https://fortworthtexas.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#d1fae5' }} onMouseEnter={(e) => e.currentTarget.style.color = 'white'} onMouseLeave={(e) => e.currentTarget.style.color = '#d1fae5'}>Fort Worth Official Site</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="pt-12" style={{ borderTop: '1px solid rgba(209, 250, 229, 0.3)' }}>
-            <p className="text-center text-sm leading-relaxed" style={{ color: '#d1fae5' }}>
+          <div className="pt-8" style={{ borderTop: '1px solid rgba(209, 250, 229, 0.3)' }}>
+            <p className="text-center text-sm" style={{ color: '#d1fae5' }}>
               © 2026 Fort Worth Permit Estimator. Not affiliated with the City of Fort Worth. 
               <br />
               Estimates are for informational purposes only. Always verify with official city sources.
