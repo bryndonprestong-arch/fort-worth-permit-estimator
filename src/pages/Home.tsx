@@ -6,28 +6,69 @@ import { AdSense } from '../components/AdSense';
 export const Home: React.FC = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#ffffff' }}>
-      <div style={{ height: '20px' }}></div>
+      {/* Fort Worth Hero Image */}
+      <div style={{
+        backgroundImage: 'url(https://images.unsplash.com/photo-1489749798305-4fea3ba63d60?w=1200&h=300&fit=crop)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '300px',
+        position: 'relative',
+      }}>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        }}></div>
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          textAlign: 'center',
+          color: 'white',
+          zIndex: 10,
+        }}>
+          <h1 style={{
+            fontSize: '48px',
+            fontWeight: 'bold',
+            marginBottom: '8px',
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+          }}>Fort Worth Permit Estimator</h1>
+          <p style={{
+            fontSize: '18px',
+            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+          }}>Quick and accurate building permit fee estimates</p>
+        </div>
+      </div>
 
+      {/* Calculator */}
       <Calculator />
 
-      <div style={{ backgroundColor: '#f9fafb', paddingTop: '80px', paddingBottom: '80px' }}>
+      {/* Ad Space 1 */}
+      <div style={{ backgroundColor: '#f9fafb', paddingTop: '20px', paddingBottom: '80px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <AdSense slot="1234567890" format="horizontal" />
         </div>
       </div>
 
-      <div style={{ backgroundColor: '#f9fafb', paddingTop: '80px', paddingBottom: '80px' }}>
+      {/* Article Section */}
+      <div style={{ backgroundColor: '#f9fafb', paddingTop: '20px', paddingBottom: '80px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <Article />
         </div>
       </div>
 
+      {/* Ad Space 2 */}
       <div style={{ backgroundColor: '#ffffff', paddingTop: '80px', paddingBottom: '80px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <AdSense slot="0987654321" format="vertical" />
         </div>
       </div>
 
+      {/* Footer */}
       <footer className="text-white" style={{ backgroundColor: '#134e4a', paddingTop: '80px', paddingBottom: '80px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
